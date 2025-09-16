@@ -27,7 +27,6 @@ body {
 /* --- Nav section --- */
 nav {
   background-color: rgb(35, 35, 50);
-  color: white;
   padding: 10px;
 }
 nav ul {
@@ -39,6 +38,16 @@ nav ul {
 .reviews {
   margin-bottom: 20px;
   margin-top: 20px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+nav a:hover {
+  background-color: white;
+  color: rgb(35, 35, 50);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 /* --- Hero Section --- */
@@ -83,6 +92,35 @@ nav ul {
   object-fit: contain;
   aspect-ratio: 2 / 1; 
   border: black solid 1px;
+}
+
+/* --- Classification Section --- */
+#inv-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  list-style: none;
+}
+#inv-display hr {
+  height: 5px;
+  background-color: black;
+}
+#inv-display h2 {
+  font-size: 1.2em;
+}
+#inv-display li {
+  border: 3px solid lightgray;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 350px;
+}
+#inv-display img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 17px;
+  margin-bottom: 30px;
 }
 
 /* --- Small Screen Section --- */
