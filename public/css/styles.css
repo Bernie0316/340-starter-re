@@ -122,12 +122,17 @@ nav a:hover {
   border-radius: 17px;
   margin-bottom: 30px;
 }
+/* --- Detail Section --- */
+.detail-content #section1 {
+  text-align: center;
+}
+
 /* --- Error Section --- */
 #error {
   text-align: center;
 }
 
-/* --- Small Screen Section --- */
+/* --- large Screen Section --- */
 @media screen and (min-width: 768px) {
   body {
     background-image: url('/images/site/small_check.jpg');
@@ -142,7 +147,7 @@ nav a:hover {
     padding: 5px;
   }
   /* --- Main Section --- */
-  .index-content {
+  .index-content, .detail-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
