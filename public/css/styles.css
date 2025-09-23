@@ -50,6 +50,10 @@ nav a:hover {
   border-radius: 10px;
 }
 
+.message {
+  color: red;
+}
+
 /* --- Hero Section --- */
 #hero {
   display: grid;
@@ -130,6 +134,25 @@ nav a:hover {
 /* --- Error Section --- */
 #error {
   text-align: center;
+}
+
+/* --- Login Section --- */
+.login-form, #registrationForm {
+  background-color: rgb(50, 71, 92);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  max-width: 500px;
+  text-align: center;
+  align-items: center;
+}
+.login-form a {
+  color: white;
+}
+.login-form button {
+  margin-top: 10px;
+  max-width: 100px;
 }
 
 /* --- large Screen Section --- */
