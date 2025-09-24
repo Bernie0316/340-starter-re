@@ -60,7 +60,7 @@ app.use(static)
 app.get("/", utilities.handleErrors(baseController.buildHome))
 // Inventory routes
 // app.use("/inv", inventoryRoute)
-app.use("/inv", utilities.handleErrors(inventoryRoute))
+app.use("/inv", inventoryRoute)
 app.use("/errors", triggerRoute)
 app.use("/account", accountRoute)
 // File Not Found Route - must be last route in list
