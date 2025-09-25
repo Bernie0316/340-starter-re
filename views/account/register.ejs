@@ -1,0 +1,29 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+
+<%- messages() %>
+
+<div class="register-container">
+  <p>ALL FIELDS ARE REQUIRED</p>
+  <form id="registrationForm" action="/account/register" method="post">
+      <label for="firstname">First Name:</label>
+      <input type="text" id="firstname" name="account_firstname" required>
+  
+      <label for="lastname">Last Name:</label>
+      <input type="text" id="lastname" name="lastname" required>
+  
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+  
+      <label for="accountPassword">Password:</label> 
+      <input type="password" name="account_password" id="accountPassword" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
+      <span>Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character</span> 
+      <span id="pswdBtn">Show Password</span>
+  
+      <button type="submit">Register</button>
+  </form>
+</div>
+<script src="/js/script.js"></script>

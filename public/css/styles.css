@@ -143,22 +143,46 @@ nav a:hover {
 }
 
 /* --- Login Section --- */
-.login-form, #registrationForm {
-  background-color: rgb(50, 71, 92);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  max-width: 500px;
-  text-align: center;
+.login-container, .register-container {
+  margin: 50px;
+  border-radius: 10px;
+  background-color: rgb(60, 136, 175);
+  color: black;
+  padding: 10px;
   align-items: center;
+  max-width: 500px;
 }
-.login-form a {
-  color: white;
+form * {
+  display: block;
+}
+#loginForm, #registrationForm {
+  border: 2px solid white;
+  /* display: block; */
+  padding: 10px;
+  max-width: 500px;
+}
+.login-container a, .register-container a {
+  color: black;
 }
 .login-form button {
   margin-top: 10px;
   max-width: 100px;
+}
+input {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  max-width: 300px;
+}
+#pswdBtn {
+  background-color: rgb(35, 35, 50);
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  max-width: 160px;
 }
 
 /* --- large Screen Section --- */
