@@ -4,7 +4,16 @@
   res.redirect('/')
 } %>
 
-<%- messages() %>
+<div class="message">
+    <%- messages() %>
+    <% if (errors) { %>
+      <ul class="notice">
+     <% errors.array().forEach(error => { %>
+       <li><%= error.msg %></li>
+    <%  }) %>
+     </ul>
+    <% } %>
+</div>
 
 <div class="register-container">
   <p>ALL FIELDS ARE REQUIRED</p>
@@ -17,7 +26,7 @@
       <input type="text" id="lastname" name="account_lastname" required>
   
       <label for="email">Email Address:</label>
-      <input type="email" id="email" name="account_email" required>
+      <input type="email" id="email" name="account_email" required required placeholder="Enter a valid email address">
   
       <label for="accountPassword">Password:</label> 
       <input type="password" name="account_password" id="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">

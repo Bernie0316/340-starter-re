@@ -184,6 +184,20 @@ input {
   border-radius: 20px;
   max-width: 160px;
 }
+input:required:invalid, input:focus:invalid {
+ /* insert your own styles for invalid form input */
+  /* border: 2px solid red; */
+  /* background-image: url(/images/invalid.png); */
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+input:required:valid {
+ /* insert your own styles for valid form input */
+  /* border: 2px solid green; */
+  /* background-image: url(/images/valid.png); */
+  background-position: right top;
+  background-repeat: no-repeat;
+}
 
 /* --- large Screen Section --- */
 @media screen and (min-width: 768px) {
