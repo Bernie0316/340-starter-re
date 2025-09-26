@@ -10,20 +10,17 @@ const accountController = require("../controllers/accountController")
 *  
 * *************************************** */
 router.get("/login", utilities.handleErrors(accountController.buildLogin))
+
 /* ****************************************
 *  Deliver registration view
 *  
 * *************************************** */
 router.get("/register", utilities.handleErrors(accountController.buildRegister))
 
-
-// Process the registration data
-// router.post("/registration", utilities.handleErrors(accountController.registerAccount))
-// router.post(
-//   "/registration",
-//   regValidate.registationRules(),
-//   regValidate.checkRegData,
-//   utilities.handleErrors(accountController.registerAccount)
-// )
+/* ****************************************
+*  Process Registration
+*  
+* *************************************** */
+router.post("/register", utilities.handleErrors(accountController.registerAccount))
 
 module.exports = router;
