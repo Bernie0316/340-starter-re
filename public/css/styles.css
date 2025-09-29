@@ -142,8 +142,8 @@ nav a:hover {
   text-align: center;
 }
 
-/* --- Login Section --- */
-.login-container, .register-container {
+/* --- Form Section --- */
+.login-container, .register-container, #addClassificationForm, #addInventoryForm {
   margin: 50px;
   border-radius: 10px;
   background-color: rgb(60, 136, 175);
@@ -155,16 +155,16 @@ nav a:hover {
 form * {
   display: block;
 }
-#loginForm, #registrationForm {
+fieldset {
   border: 2px solid white;
-  /* display: block; */
+  border-radius: 5px;
   padding: 10px;
   max-width: 500px;
 }
 .login-container a, .register-container a {
   color: black;
 }
-.login-form button {
+button {
   margin-top: 10px;
   max-width: 100px;
 }
@@ -186,17 +186,33 @@ input {
 }
 input:required:invalid, input:focus:invalid {
  /* insert your own styles for invalid form input */
-  /* border: 2px solid red; */
+  border: 2px solid red;
   /* background-image: url(/images/invalid.png); */
   background-position: right top;
   background-repeat: no-repeat;
 }
 input:required:valid {
  /* insert your own styles for valid form input */
-  /* border: 2px solid green; */
+  border: 2px solid green;
   /* background-image: url(/images/valid.png); */
   background-position: right top;
   background-repeat: no-repeat;
+}
+
+/* Chrome, Safari, Edge */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button[type="submit"] {
+  background-color: darkgray;
+  color: black;
+  padding: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
 }
 
 /* --- large Screen Section --- */

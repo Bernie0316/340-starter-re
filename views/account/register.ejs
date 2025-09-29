@@ -18,15 +18,17 @@
 <div class="register-container">
   <p>ALL FIELDS ARE REQUIRED</p>
   <form id="registrationForm" action="/account/register" method="post">
-    <fieldset></fieldset>
+    <fieldset>
       <label for="firstname">First Name:</label>
-      <input type="text" id="firstname" name="account_firstname" required>
+      <!-- <input type="text" id="firstname" name="account_firstname" required> -->
+      <input type="text" name="account_firstname" id="accountFirstname" required value="<%= locals.account_firstname %>">
+
   
       <label for="lastname">Last Name:</label>
-      <input type="text" id="lastname" name="account_lastname" required>
+      <input type="text" id="lastname" name="account_lastname" required value="<%= locals.account_lastname %>">
   
       <label for="email">Email Address:</label>
-      <input type="email" id="email" name="account_email" required required placeholder="Enter a valid email address">
+      <input type="email" id="email" name="account_email" required placeholder="Enter a valid email address" value="<%= locals.account_email %>">
   
       <label for="accountPassword">Password:</label> 
       <input type="password" name="account_password" id="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
@@ -34,6 +36,7 @@
       <span id="pswdBtn">Show Password</span>
   
       <button type="submit">Register</button>
+    </fieldset>
   </form>
 </div>
 <script src="/js/script.js"></script>
