@@ -15,7 +15,7 @@
     <% } %>
 </div>
 
-<form id="InventoryForm" action="/inv/add-inventory" method="post">
+<form id="editInventoryForm" action="/inv/update" method="post">
   <p>ALL FIELDS ARE REQUIRED</p>
     <fieldset class="addInventoryFormFieldset">
       <label for="classification_id">Classification</label>
@@ -62,6 +62,8 @@
     </fieldset>
 
     <div class="form-actions">
-      <button type="submit">Add Vehicle</button>
+      <button type="submit" disabled>Update Vehicle</button>
+      <input type="hidden" name="inv_id" value="<%= locals.inv_id %>">
     </div>
 </form>
+<script src="/js/inv-update.js"></script>

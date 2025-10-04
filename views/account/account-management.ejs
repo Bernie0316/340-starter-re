@@ -1,0 +1,10 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+
+<!-- 顯示訊息 -->
+<div class="message">
+    <%- messages() %>
+</div>

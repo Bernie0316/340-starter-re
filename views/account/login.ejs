@@ -12,6 +12,7 @@
 <!-- 登入表單 -->
 <div class="login-container">
   <form id="loginForm" class="login-form" action="/account/login" method="post">
+    <fieldset>
       <label for="account_email">Email:</label>
       <input type="email" id="account_email" name="account_email" required>
   
@@ -22,6 +23,7 @@
       <!-- <button>Show Passowrd</button> -->
       <span id="pswdBtn">Show Password</span>
       <button type="submit">Login</button>
+    </fieldset>  
   </form>
   <p>No account? <a href="/account/register">Sign-up</a></p>
 </div>

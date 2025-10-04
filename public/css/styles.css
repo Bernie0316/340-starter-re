@@ -50,8 +50,9 @@ nav a:hover {
   border-radius: 10px;
 }
 
-.message {
+.message, .notice {
   color: red;
+  list-style: none;
 }
 
 /* --- Hero Section --- */
@@ -143,7 +144,7 @@ nav a:hover {
 }
 
 /* --- Form Section --- */
-.login-container, .register-container, #addClassificationForm, #addInventoryForm {
+.login-container, .register-container, #addClassificationForm, #addInventoryForm, #editInventoryForm {
   margin: 50px;
   border-radius: 10px;
   background-color: rgb(60, 136, 175);
