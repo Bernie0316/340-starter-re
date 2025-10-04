@@ -144,7 +144,7 @@ nav a:hover {
 }
 
 /* --- Form Section --- */
-.login-container, .register-container, #addClassificationForm, #addInventoryForm, #editInventoryForm {
+.login-container, .register-container, #addClassificationForm, #addInventoryForm, #editInventoryForm, #deleteInventoryForm {
   margin: 50px;
   border-radius: 10px;
   background-color: rgb(60, 136, 175);

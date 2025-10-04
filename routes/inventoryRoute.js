@@ -12,6 +12,7 @@ router.get("/", utilities.handleErrors(invController.buildManagement));
 router.get("/add-classification", utilities.handleErrors(invController.buildAddClassification));
 router.get("/add-inventory", utilities.handleErrors(invController.buildAddInventory));
 router.get("/edit/:invId", utilities.handleErrors(invController.editInventoryView));
+router.get("/delete/:invId", utilities.handleErrors(invController.deleteInventoryView));
 
 router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
 
@@ -43,6 +44,15 @@ router.post(
   "/update/", 
   regValidate.inventoryRules(),
   regValidate.checkUpdateData,
-  utilities.handleErrors(invController.updateInventory))
+  utilities.handleErrors(invController.updateInventory)
+)
+
+/* ****************************************
+*  Process delete-inventory
+* *************************************** */
+router.post(
+  "/delete/", 
+  utilities.handleErrors(invController.deleteInventory)
+)
 
 module.exports = router;

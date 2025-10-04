@@ -101,6 +101,33 @@ invCont.editInventoryView = async function (req, res, next) {
   })
 }
 
+/* ***************************
+ *  Build delete inventory view
+ * ************************** */
+invCont.deleteInventoryView = async function (req, res, next) {
+  const inv_id = parseInt(req.params.invId)
+  if (isNaN(inv_id)) {
+    return res.status(400).send("Invalid inventory id.")
+  }
+  let nav = await utilities.getNav()
+  const itemData = await invModel.getInventoryById(inv_id)
+  const item = Array.isArray(itemData) ? itemData[0] : itemData
+  if (!item) {
+    return res.status(404).send("Inventory item not found.")
+  }
+  const itemName = `${item.inv_make} ${item.inv_model}`
+  res.render("./inventory/delete-confirm", {
+    title: "Delete " + itemName,
+    nav,
+    errors: null,
+    inv_id: item.inv_id,
+    inv_make: item.inv_make,
+    inv_model: item.inv_model,
+    inv_year: item.inv_year,
+    inv_price: item.inv_price,
+  })
+}
+
 /* ****************************************
 *  Process add-classification
 * *************************************** */
@@ -152,6 +179,7 @@ invCont.buildAddInventory = async function(req, res, next) {
 * *************************************** */
 invCont.addInventory = async function(req, res) {
   let nav = await utilities.getNav()
+  let classificationSelect = await utilities.buildClassificationList()
   const {
     inv_make,
     inv_model,
@@ -186,6 +214,7 @@ invCont.addInventory = async function(req, res) {
     res.status(201).render("inventory/management", {
       title: "Inventory Management",
       nav,
+      classificationSelect,
       errors: null,
     })
   } else {
@@ -282,6 +311,34 @@ invCont.updateInventory = async function (req, res, next) {
     inv_color,
     classification_id
     })
+  }
+}
+
+/* ***************************
+ *  delete Inventory Data
+ * ************************** */
+invCont.deleteInventory = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  const classificationSelect = await utilities.buildClassificationList()
+  // const { inv_id, inv_make, inv_model } = req.body
+  const inv_id = parseInt(req.body.inv_id)
+
+  const deleteResult = await invModel.deleteInventory(inv_id)
+
+  if (deleteResult) {
+    req.flash(
+      "notice", 
+      `The deletion was successfully deleted.`
+    )
+    res.status(201).render("inventory/management", {
+      title: "Inventory Management",
+      nav,
+      classificationSelect,
+      errors: null,
+    })
+  } else {
+    req.flash("notice", "Sorry, the delete failed.")
+    res.redirect("/inv/delete/inv_id")
   }
 }
 
