@@ -108,6 +108,7 @@ async function accountLogin(req, res) {
     if (await bcrypt.compare(account_password, accountData.account_password)) {
       delete accountData.account_password
       const accessToken = jwt.sign(accountData, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 3600 * 1000 })
+      req.session.account_firstname = accountData.account_firstname
       req.flash(
       "notice",
       `Wellcome ${accountData.account_firstname} \nYou're logged in.`
