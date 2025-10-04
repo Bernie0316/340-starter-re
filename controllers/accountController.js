@@ -109,6 +109,10 @@ async function accountLogin(req, res) {
       delete accountData.account_password
       const accessToken = jwt.sign(accountData, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 3600 * 1000 })
       req.session.account_firstname = accountData.account_firstname
+      
+      req.session.account_id = accountData.account_id
+      req.session.account_type = accountData.account_type 
+      
       req.flash(
       "notice",
       `Wellcome ${accountData.account_firstname} \nYou're logged in.`
