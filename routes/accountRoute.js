@@ -8,12 +8,11 @@ router.get("/login", utilities.handleErrors(accountController.buildLogin))
 router.get("/register", utilities.handleErrors(accountController.buildRegister))
 router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildAccountManagement))
 router.get("/update/:accountId", utilities.checkLogin, utilities.handleErrors(accountController.buildAccountUpdate))
+router.get("/logout", accountController.accountLogout)
 
 /* ****************************************
 *  Process Registration
-*  
 * *************************************** */
-// Process the registration data
 router.post(
   "/register",
   regValidate.registationRules(),
