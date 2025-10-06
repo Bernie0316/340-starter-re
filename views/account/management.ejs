@@ -15,4 +15,13 @@
     <% } %>
 </div>
 
-<a href="">Edit Account Information</a>
+<h3>Welcome <%= username %></h3>
+<p>You are login</p>
+
+<p><a href="/account/update/<%= account_id %>">Update Account Information</a></p>
+
+<!-- Employee/Admin extra content -->
+<% if (account_type == "Employee" || account_type == "Admin") { %>
+  <h3>Inventory Management</h3>
+  <p><a href="/inv/">Manage Inventory</a></p>
+<% } %>

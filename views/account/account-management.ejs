@@ -8,3 +8,13 @@
 <div class="message">
     <%- messages() %>
 </div>
+
+<p><a href="/account/update/<%= account_id %>">Update Account Information</a></p>
+
+<p>Account type: <%= account_type %></p>
+<p>try m</p>
+<!-- Employee/Admin extra content -->
+<% if (account_type == "Employee" || account_type == "Admin") { %>
+  <h3>Inventory Management</h3>
+  <p><a href="/inv/">Manage Inventory</a></p>
+<% } %>
